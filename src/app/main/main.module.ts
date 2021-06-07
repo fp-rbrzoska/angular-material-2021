@@ -5,11 +5,13 @@ import { CommonModule } from '@angular/common';
 import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main/main.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { UsersListComponent } from './users-list/users-list.component';
 
 @NgModule({
   declarations: [
     MainComponent,
-    EditDialogComponent
+    EditDialogComponent,
+    UsersListComponent
   ],
   imports: [
     CommonModule,
