@@ -33,3 +33,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+.toggle-btn {
+  display: none;
+
+  @media (max-width: 720px) {
+    display: block;
+  }
+}

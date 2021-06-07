@@ -1,20 +1,23 @@
 <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
+  <mat-drawer #drawer class="example-sidenav mat-elevation-z10" [mode]="isSmallScreen ? 'over' : 'side'" [opened]="!isSmallScreen">
     <mat-toolbar color="primary">
-      <button type="button" mat-button (click)="drawer.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
+
     </mat-toolbar>
   </mat-drawer>
 
   <div class="example-sidenav-content">
     <mat-toolbar color="primary" class="menu">
-      <div class="left"></div>
-      <div class="right">
+      <div class="left">
+        <button type="button" mat-button (click)="drawer.toggle()" class="toggle-btn">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div class="right"></div>
       <button type="button" mat-icon-button>
         <mat-icon>logout</mat-icon>
-      </button></div>
+      </button>
     </mat-toolbar>
+    <button mat-fab color="accent" (click)="openDialog()"><mat-icon>add</mat-icon></button>
     <div class="items">
       <div class="item">item1</div>
       <div class="item">item2</div>

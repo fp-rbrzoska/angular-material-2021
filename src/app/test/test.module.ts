@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 
 import { TestRoutingModule } from './test-routing.module';
 import { TestComponent } from './test/test.component';
+import { ContentComponent } from './content/content.component';
 
 
 @NgModule({
   declarations: [
-    TestComponent
+    TestComponent,
+    ContentComponent
   ],
   imports: [
     CommonModule,
