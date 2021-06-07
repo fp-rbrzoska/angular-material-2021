@@ -1,3 +1,4 @@
+import { Country } from './../../models/Country';
 import { UsersService } from './../../users.service';
 import { User } from './../../models/User';
 import { EditDialogComponent } from './../edit-dialog/edit-dialog.component';
@@ -13,10 +14,12 @@ import { Observable } from 'rxjs';
 })
 export class MainComponent implements OnInit {
 
+  countries: Country[] = [];
   users$!: Observable<User[]>
   isSmallScreen!: boolean;
   constructor(private breakpointObserver: BreakpointObserver, private dialog: MatDialog, private usersService: UsersService) {
     this.users$ = this.usersService.getUsers();
+    this.usersService.getUserCountries().subscribe(countries => this.countries = countries);
    }
 
   ngOnInit(): void {
@@ -28,7 +31,10 @@ export class MainComponent implements OnInit {
   openDialog() {
     this.dialog.open(EditDialogComponent, {
       disableClose: true,
-      hasBackdrop: false
+      hasBackdrop: false,
+      data: {
+        countries: this.countries
+      }
     }).afterClosed().subscribe(v => console.log(v));
   }
 

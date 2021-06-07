@@ -6,6 +6,7 @@ import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main/main.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { UsersListComponent } from './users-list/users-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { UsersListComponent } from './users-list/users-list.component';
   imports: [
     CommonModule,
     MainRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
+
   ]
 })
 export class MainModule { }

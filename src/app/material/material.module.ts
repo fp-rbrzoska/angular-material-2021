@@ -10,6 +10,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 export const MY_CONST = 5;
 
@@ -25,8 +30,13 @@ export const MY_CONST = 5;
     MatTableModule,
     MatSortModule,
     MatMenuModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
     LayoutModule,
     CommonModule,
+    MatChipsModule,
+    MatAutocompleteModule
   ],
   exports: [
     MatButtonModule,
@@ -36,9 +46,14 @@ export const MY_CONST = 5;
     LayoutModule,
     MatDialogModule,
     MatMenuModule,
+    MatInputModule,
+    MatFormFieldModule,
     MatProgressSpinnerModule,
+    MatSelectModule,
     MatTableModule,
     MatSortModule,
+    MatChipsModule,
+    MatAutocompleteModule
   ],
 })
 export class MaterialModule {}

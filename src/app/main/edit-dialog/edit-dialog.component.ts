@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Country } from './../../models/Country';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-dialog',
@@ -8,7 +10,12 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class EditDialogComponent implements OnInit {
 
-  constructor(private dialogRef: MatDialogRef<EditDialogComponent>) { }
+  myForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    country: new FormControl()
+  })
+  constructor(private dialogRef: MatDialogRef<EditDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: { countries: Country[]}) { }
 
   ngOnInit(): void {
   }
